@@ -1,0 +1,39 @@
+.navbar{
+    min-height: 72px;
+    margin-bottom: 0px;
+}
+.navbar-default{
+    background-color: #ffffff;
+    border-color:#7c7777;
+}
+.container-fluid{
+    padding: 0px 30px;
+}
+.row{
+    margin:0px;
+}
+.row div{
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+.class_1{
+    height:72px;
+    border: 1px solid red;
+}
+.link{
+    width: 100%;
+    height:72px;
+    background-color: yellow;
+}
+.link ul,.link li{
+    display: inline-block;
+}
+.link ul{
+    margin-bottom: 0px;
+}
+.link li{
+    list-style-type: none;
+    margin-left: 50px;
+}

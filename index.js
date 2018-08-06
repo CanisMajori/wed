@@ -7,9 +7,10 @@ const bodyParser = require('body-parser');
 const md5 = require('md5');
 const ejs = require('ejs');
 global.mysql = require('mysql');
-const expressSession = require('express-session');
+const session = require('express-session');
 const path = require('path');
 const svgCaptcha = require('svg-captcha');
+const cookieParser = require('cookie-parser');
 
 //创建一个web服务
 const server = express();
@@ -48,7 +49,7 @@ server.use(bodyParser.urlencoded({
 
 //后端写在这里    start*************************************************
 //实现管理员登录：引用的模块文件后面要有小括号   路径第一个字符 是  /
-server.use('/admin/login', require('./module/admin/login')());
+// server.use('/admin/login', require('./module/admin/login')());
 
 
 
@@ -57,7 +58,9 @@ server.use('/admin/login', require('./module/admin/login')());
 
 
 //前端 start********************************
-
+server.get('/',(req,res) => {
+    res.render('html/index');
+});
 
 
 
