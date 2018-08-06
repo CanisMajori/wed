@@ -1,16 +1,16 @@
 /**
  * Created by 12934 on 2018/8/6.
  */
-const express = require('express');
+global.express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const md5 = require('md5');
+const cookieParser=require('cookie-parser');
+global.md5 = require('md5');
 const ejs = require('ejs');
 global.mysql = require('mysql');
-const session = require('express-session');
+const expressSession = require('express-session');
 const path = require('path');
 const svgCaptcha = require('svg-captcha');
-const cookieParser = require('cookie-parser');
 
 //创建一个web服务
 const server = express();
@@ -32,7 +32,7 @@ let cookiesigned = 'sign';
 server.use(cookieParser(cookiesigned));
 
 //启用session相关的中间件
-server.use(session({
+server.use(expressSession({
     secret: cookiesigned,
     name: 'sessid',
     resave: true, //每次发起请求的时候，有效时间要不要重新及时
@@ -44,12 +44,16 @@ server.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
+
+
 //各种路由设置
 
 
-//后端写在这里    start*************************************************
-//实现管理员登录：引用的模块文件后面要有小括号   路径第一个字符 是  /
-// server.use('/admin/login', require('./module/admin/login')());
+//后端start*************************************************
+
+//管理员登录：引用的模块文件后面要有小括号路径第一个字符 是  /
+server.use('/admin/login', require('./module/admin/login')());
 
 
 
@@ -58,9 +62,7 @@ server.use(bodyParser.urlencoded({
 
 
 //前端 start********************************
-server.get('/',(req,res) => {
-    res.render('html/index');
-});
+
 
 
 
