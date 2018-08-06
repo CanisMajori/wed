@@ -2,12 +2,13 @@
     min-height: 72px;
     margin-bottom: 0px;
 }
-.navbar-default{
-    background-color: #ffffff;
-    border-color:#7c7777;
-}
 .container-fluid{
-    padding: 0px 30px;
+    padding: 0px;
+}
+.nav_row{
+    padding: 0px 0px 0px 30px;
+    background-color: #ffffff;
+    border-bottom:1px solid #7c7777;
 }
 .row{
     margin:0px;
@@ -16,24 +17,115 @@
     padding: 0px;
 }
 a{
-    text-decoration: none;
+    text-decoration: none!important;
 }
 .class_1{
     height:72px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
-.link{
+#logo{
+    line-height: 72px;
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    font-weight: 900;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.link,.log_reg{
     width: 100%;
     height:72px;
-    background-color: yellow;
 }
-.link ul,.link li{
+.link ul,.link li,.log_reg ul,.log_reg li{
     display: inline-block;
 }
-.link ul{
+.link ul,.log_reg ul{
     margin-bottom: 0px;
 }
 .link li{
     list-style-type: none;
-    margin-left: 50px;
+    width:115px;
+    line-height: 72px;
+    text-align: center;
+}
+.link span,.log_reg span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+.log_reg span{
+    font-weight: normal;
+}
+a:hover{
+    color: #ffffff;
+}
+.log_reg li{
+    list-style-type: none;
+    width:79px;
+    line-height: 72px;
+    text-align: center;
+}
+.search span{
+    font-size: 25px !important;
+}
+.search{
+    background-color: #F0F0F0;
+    height:71px;
+}
+.search:hover{
+    background-color: #FFF041;
+}
+.psat_case{
+    height:100px;
+    background-color: #F0F0F0;
+}
+.past_case a{
+    padding-left: 30px;
+    font-size: 30px;
+    line-height: 100px;
+    font-weight: normal;
+    color: #000000;
+}
+.item img{
+    width: 100%;
+    height:600px!important;
+}
+.show_case{
+    width: 100%;
+    height:505px;
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.case_item{
+    width:503px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    /*border: 1px solid red;*/
+}
+.case_item img{
+    width: 503px;
+    height:505px;
+}
+.info{
+    width: 250px;
+    height:250px;
+    background-color: #ffffff;
+    position: relative;
+    top:-250px;
+}
+.info:hover{
+    background-color:#FFF041;
+}
+.footer{
+    width:100%;
+    height:50px;
+    background-color: #F0F0F0;
+}
+.footer p{
+    margin-bottom: 0px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
 }

@@ -1,0 +1,89 @@
+body{
+    background-image: url("../img/case1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login{
+    width: 370px;
+    height:370px;
+    background-color:rgba(255,255,255,0.4);
+    margin: 200px auto;
+}
+#user1,#user2{
+    margin: 0px;
+    width: 185px;
+    height:55px;
+    font-size: 20px;
+    line-height: 55px;
+    text-align: center;
+}
+#user1{
+    border-bottom: 3px solid #3c3c3c;
+}
+#user2{
+    position: relative;
+    left: 185px;
+    top:-55px;
+}
+.Demand,.Service{
+    width: 370px;
+    height:315px;
+    position: relative;
+}
+.Demand{
+    top:-55px;
+}
+.Service{
+    top:-55px;
+    display: none;
+}
+#Demand_login label{
+    display:none;
+}
+#Demand_login .form-group,#Demand_login .form-control,#Demand_login .btn{
+    width: 300px;
+    height:45px;
+    margin-bottom: 0px;
+}
+#Demand_login .form-group{
+    margin: 0px 45px 0px 45px;
+}
+#Demand_login .second_input{
+    padding-top: 70px!important;
+}
+#Demand_login .first_input{
+    padding-top: 50px!important;
+}
+#Demand_login .form-control{
+    padding: 0px;
+    font-size: 16px;
+}
+#Demand_login .btn{
+    margin: 30px 45px 0px 45px;
+    margin-top: 100px;
+}
+#Service_login label{
+    display:none;
+}
+#Service_login .form-group,#Service_login .form-control,#Service_login .btn{
+    width: 300px;
+    height:45px;
+    margin-bottom: 0px;
+}
+#Service_login .form-group{
+    margin: 0px 45px 0px 45px;
+}
+#Service_login .second_input{
+    padding-top: 70px!important;
+}
+#Service_login .first_input{
+    padding-top: 50px!important;
+}
+#Service_login .form-control{
+    padding: 0px;
+    font-size: 16px;
+}
+#Service_login .btn{
+    margin: 30px 45px 0px 45px;
+    margin-top: 100px;
+}

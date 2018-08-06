@@ -53,7 +53,7 @@ server.use(bodyParser.urlencoded({
 //后端start*************************************************
 
 //管理员登录：引用的模块文件后面要有小括号路径第一个字符 是  /
-server.use('/admin/login', require('./module/admin/login')());
+ server.use('/admin/login', require('./module/admin/login')());
 
 
 
@@ -62,7 +62,8 @@ server.use('/admin/login', require('./module/admin/login')());
 
 
 //前端 start********************************
-
+//首页
+server.use('/', require('./module/index')());
 
 
 
