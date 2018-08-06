@@ -45,6 +45,15 @@ server.use(bodyParser.urlencoded({
 
 //各种路由设置
 
+
+
+
+
+
+
+
+
+
 //静态资源托管
 server.use(express.static('view'));
 
