@@ -1,0 +1,21 @@
+.jumbotron{
+    padding-left:100px;
+}
+
+.block{
+    display: inline-block;
+    width:400px;
+}
+.btn{
+    background-color:whitesmoke;
+}
+.thumbnail img{
+    width:360px;
+    height:240px;
+    position: relative;
+}
+.thumbnail img:hover{
+    top:3px;
+    right:3px;
+    transition:all 2s linear 2s;//？不起作用？？
+}
