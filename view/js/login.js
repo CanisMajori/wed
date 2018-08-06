@@ -1,6 +1,7 @@
 /**
  * Created by 12934 on 2018/8/1.
  */
+// 这是管理员的登录页面js
 window.onload=function () {
     login();
 }
