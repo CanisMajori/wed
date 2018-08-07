@@ -4,6 +4,7 @@
 module.exports = function(){
     //创建路由实例
     let router = express.Router();
+
     //渲染首页
     router.get('/',(req,res) => {
         res.render('html/index');
@@ -12,18 +13,27 @@ module.exports = function(){
     router.get('/login',(req,res)=>{
         res.render('html/login');
     });
-    //习俗页面
-    router.get('/custom',(req,res) => {
-        res.render('html/custom');
+
+    //渲染info页面
+    router.get('/info',(req,res) => {
+        res.render('html/info');
     });
-    //渲染普通用户注册页面
+
+    //渲染普通人员注册页面
     router.get('/reg1',(req,res) => {
         res.render('html/reg1');
     });
+
     //渲染服务人员注册页面
     router.get('/reg2',(req,res) => {
         res.render('html/reg2');
     });
+
+    //渲染custom页面
+    router.get('/custom',(req,res) => {
+        res.render('html/custom');
+    });
+
     //普通用户注册按钮
     router.post('/reg1.do',(req,res)=>{
         let p = req.body;
@@ -75,13 +85,47 @@ module.exports = function(){
             }
         });
     });
-     //验证登录页面
+
+    //验证需求型用户登录页面
     router.post('/dlogin',(req,res) => {
         //验证账号是否存在
         let d = req.body;
-        let sql = `SELECT uid,username,password FROM user LIMIT 1`;
+        let sql = `SELECT uid,username,password FROM user WHERE username = ? OR password = ? LIMIT 1`;
         mydb.query(sql,[d.dusername,d.dpassword],(err,result) => {
+            //input标签里要写name属性,否则后台接收不到数据,result是查出来的数据库值
             console.log(result);
+            //判断用户是否存在
+            if(!result.length){
+                res.json({r:'dusername_not_exist'});
+                return;
+            }
+            //验证密码是否正确
+            if(md5(d.dpassword) != result[0].password){
+                res.json({r:'dpassword_error'});
+                return;
+            }
+            res.json({r:'success'});
+        })
+    })
+
+    //验证服务型用户登录页面
+    router.post('/slogin',(req,res) => {
+        //验证账号是否存在
+        let s = req.body;
+        let sql = `SELECT sid,sname,spassword FROM serverclass WHERE sname = ? OR spassword = ? LIMIT 1`;
+        mydb.query(sql,[s.susername,s.spassword],(err,result) => {
+            console.log(result);
+            //判断用户是否存在
+            if(!result.length){
+                res.json({r:'susername_not_exist'});
+                return;
+            }
+            //验证密码是否正确
+            if(md5(s.spassword) != result[0].spassword){
+                res.json({r:'spassword_error'});
+                return;
+            }
+            res.json({r:'success'});
         })
     })
 
