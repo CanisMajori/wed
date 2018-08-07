@@ -14,7 +14,7 @@ function reg2(){
         let password2=$('#passwd2').val();
         let tel=$('#tel').val();
         let email=$('#email').val();
-        let u=$('#username');
+        let u=$('#sname');
         let p1=$('#passwd1');
         //清除错误信息
         $("span").html('');
