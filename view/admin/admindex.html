@@ -1,0 +1,46 @@
+<% include header.html %>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li>
+            <a href="#">成功案列</a>
+        </li>
+        <li class="active">用户管理</li>
+    </ol>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>个性签名</th>
+            <th>电话</th>
+            <th>邮箱</th>
+            <th>注册时间</th>
+            <th>上次登录时间</th>
+            <th>登录次数</th>
+            <th>操作</th>
+        </tr>
+        <%
+        let n = 0;
+        for(let qc of userlist){
+        n++;
+        %>
+        <tr>
+            <td><%=n%></td>
+            <td><%=qc.username%></td>
+            <td><%=qc.sign%></td>
+            <td><%=qc.tel%></td>
+            <td><%=qc.email%></td>
+            <td><%=qc.regtime%></td>
+            <td><%=qc.lasttime%></td>
+            <td><%=qc.loginnum%></td>
+            <td>
+                <a href="javascript:void(0)" class="delc1" qcid="<%=qc.uid%>">删除</a>
+            </td>
+        </tr>
+        <%}%>
+
+
+
+    </table>
+    <% include footer.html %>

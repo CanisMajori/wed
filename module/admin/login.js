@@ -28,7 +28,8 @@ module.exports=function () {
             }
             //session处理
             req.session.aid=result[0].aid;
-            console.log(result[0].account);
+            console.log('设置的session  aid为'+result[0].aid);
+            console.log('设置的session  username为'+result[0].account);
             req.session.username=result[0].account;
 
             //为当前登录用户设置登录信息
@@ -42,5 +43,13 @@ module.exports=function () {
         });
 
     });
+    //管理员退出登录：
+    router.get('/logout',(req,res)=>{
+        //清除session信息
+        delete req.session.aid;
+        //跳转到登录页面
+        res.redirect('/admin/login');
+    });
+
     return router;
 };
