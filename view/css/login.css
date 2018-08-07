@@ -18,7 +18,7 @@ body{
     text-align: center;
 }
 #user1{
-    border-bottom: 3px solid #3c3c3c;
+    border-bottom: 3px solid #cccccc;
 }
 #user2{
     position: relative;
@@ -37,53 +37,62 @@ body{
     top:-55px;
     display: none;
 }
+#Demand_login,#Service_login{
+    width: 370px;
+    height:315px;
+    overflow: hidden;
+}
 #Demand_login label{
     display:none;
-}
-#Demand_login .form-group,#Demand_login .form-control,#Demand_login .btn{
-    width: 300px;
-    height:45px;
     margin-bottom: 0px;
 }
 #Demand_login .form-group{
+    width: 300px;
+    height:45px;
+    padding: 0px!important;
     margin: 0px 45px 0px 45px;
 }
-#Demand_login .second_input{
-    padding-top: 70px!important;
-}
-#Demand_login .first_input{
-    padding-top: 50px!important;
-}
-#Demand_login .form-control{
-    padding: 0px;
-    font-size: 16px;
-}
-#Demand_login .btn{
-    margin: 30px 45px 0px 45px;
-    margin-top: 100px;
-}
-#Service_login label{
-    display:none;
-}
-#Service_login .form-group,#Service_login .form-control,#Service_login .btn{
+#Demand_login .form-control,#Demand_login .btn{
     width: 300px;
     height:45px;
     margin-bottom: 0px;
 }
+#Demand_login .first_input{
+    margin-top: 60px;
+}
+#Demand_login .second_input{
+    margin-top: 30px;
+}
+#Demand_login .form-control{
+    font-size: 16px;
+}
+#Demand_login .btn{
+    margin: 50px 45px 0px 45px;
+}
+#Service_login label{
+    display:none;
+    margin-bottom: 0px;
+}
 #Service_login .form-group{
+    width: 300px;
+    height:45px;
+    padding: 0px!important;
     margin: 0px 45px 0px 45px;
 }
-#Service_login .second_input{
-    padding-top: 70px!important;
+#Service_login .form-control,#Service_login .btn{
+    width: 300px;
+    height:45px;
+    margin-bottom: 0px;
 }
 #Service_login .first_input{
-    padding-top: 50px!important;
+    margin-top: 60px;
+}
+#Service_login .second_input{
+    margin-top: 30px;
 }
 #Service_login .form-control{
-    padding: 0px;
     font-size: 16px;
 }
 #Service_login .btn{
-    margin: 30px 45px 0px 45px;
-    margin-top: 100px;
+    margin: 50px 45px 0px 45px;
 }
