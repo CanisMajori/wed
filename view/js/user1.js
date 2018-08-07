@@ -66,7 +66,7 @@ function reg(){
 
         //ajax验正
         $.ajax({
-            url:'./reg.do',
+            url:'./reg1.do',
             type:'POST',
             dataType:'JSON',
             data:$('#regform').serialize(),
@@ -80,7 +80,7 @@ function reg(){
                     alert('数据库错误');
                 }else{
                     alert('注册成功，前往登录页面');
-                    window.location.href='./login.html';
+                    window.location.href='./login';
                 }
             },
             fail:function (err) {
@@ -91,5 +91,8 @@ function reg(){
 
         })
 
-    })
+    });
+    $('.reg2').click(function () {
+        window.location.href=('./reg2')
+    });
 }

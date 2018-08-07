@@ -2,11 +2,11 @@
  * Created by 12934 on 2018/8/6.
  */
 window.onload=function () {
-    reg();
+    reg2();
 };
 
 //普通用户注册.js
-function reg(){
+function reg2(){
     $('.regbtn').click(function(){
         //获取用户数据
         let username=$('#sname').val();
@@ -69,7 +69,7 @@ function reg(){
         console.log(222);
         //ajax验正
         $.ajax({
-            url:'./reg.do',
+            url:'./reg2.do',
             type:'POST',
             dataType:'JSON',
             data:$('#regform').serialize(),
@@ -83,7 +83,7 @@ function reg(){
                     alert('数据库错误');
                 }else{
                     alert('注册成功，前往登录页面');
-                    window.location.href='./login.html';
+                    window.location.href='./login';
                 }
             },
             fail:function (err) {
