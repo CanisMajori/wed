@@ -46,7 +46,7 @@ function login() {
                     $('#pe').css('color','red');
                 }
                 if(result.r=='ok'){
-                    window.location.href='/admin/qclass';
+                    window.location.href='/admin/info';
                 }
             }
 

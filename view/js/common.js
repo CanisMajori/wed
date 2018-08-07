@@ -32,11 +32,44 @@ function login() {
         $('.Service').css('display','none');
         $('#user1').css('border-bottom','3px solid #3c3c3c');
         $('#user2').css('border-bottom','0px');
-    })
+    });
     $('#user2').click(function () {
         $('.Demand').css('display','none');
         $('.Service').css('display','block');
         $('#user2').css('border-bottom','3px solid #3c3c3c');
         $('#user1').css('border-bottom','0px');
-    })
+    });
+
+    //需求型用户页面验证
+    $('.btn1').click(function () {
+
+        $('.form-group').removeClass('has-error');
+        $('.form-group span').html('');
+
+        let username = /^[\w\u4e00-\u9fa5]{2,10}$/i;
+        if(!username.test($('#dusername').val())){
+            $('#dusername').focus();
+            $('#dusername').parent().addClass('has-error');
+            $('#dusername').next().html('please enter a 2-10 digit account number');
+            return;
+        }
+
+        if($('#dpassword').val().length < 6 || $('#dpassword').val().length > 16){
+            $('#dpassword').focus();
+            $('#dpassword').parent().addClass('has-error');
+            $('#dpassword').next().html('please enter a 6-16 digit password');
+            return;
+        }
+
+        $.ajax({
+            url:'./dlogin',
+            type:'POST',
+            dataType:'JSON',
+            data:$('#Demand_login').serialize(),
+            success:function (data) {
+                console.log(data);
+            }
+        })
+    });
+
 }
