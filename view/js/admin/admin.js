@@ -96,7 +96,6 @@ function delClass() {
         if(!confirm('是否确认删除？')){
             return ;
         }
-        //删除 对应 的信息  ： 通过主键来对应
         let $qcid = $(this).attr('qcid');
         let This = this;
         $.ajax({
