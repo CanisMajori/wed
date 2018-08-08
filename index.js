@@ -11,6 +11,7 @@ global.mysql = require('mysql');
 const expressSession = require('express-session');
 const path = require('path');
 const svgCaptcha = require('svg-captcha');
+const multer = require('multer');
 
 //创建一个web服务
 const server = express();
@@ -59,11 +60,18 @@ server.use(bodyParser.urlencoded({
 
 
 //后端 end****************************************************
-
+//指定上传文件保存位置
+const upload = multer({dest:'./uploads'});
+//接收上传上来的图片,single接收虚拟表单传过来的第一个自命名参数
+server.post('/upload',upload.single('uploadheader'),(req,res) => {
+    res.json({path:req.file.path});
+})
 
 
 //前端 start********************************
 //首页
+//路由是一层一层找，把/user放到/后面,就会先找/,找不到/user
+server.use('/user', require('./module/user')());
 server.use('/', require('./module/index')());
 
 
@@ -76,6 +84,7 @@ server.use('/', require('./module/index')());
 
 
 //静态资源托管
+server.use('/uploads',express.static('uploads'));
 server.use(express.static('view'));
 
 //404处理：样式自定义

@@ -1,0 +1,37 @@
+.class_2{
+    height:800px;
+    /*border-right: 1px solid red;*/
+}
+.nav-stacked{
+    height:300px;
+    margin-top: 30px;
+    border-right: 5px solid #FFF041;
+}
+.content{
+    height:750px;
+    margin: 30px 20px 0px 20px;
+    /*background-color: #cccccc;*/
+}
+.nav-stacked a{
+    padding: 0px;
+    text-align: left;
+}
+.nav-stacked span{
+    font-size: 18px;
+    color: #000000;
+}
+.content h3{
+    padding-top: 10px;
+}
+.content form{
+    margin-top: 15px;
+}
+.nav-stacked li,.nav-stacked a{
+    height:45px;
+}
+#myheader{
+    margin: 20px 0px 20px 0px;
+    width: 100px;
+    height:100px;
+    border-radius: 50px;
+}

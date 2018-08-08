@@ -90,7 +90,7 @@ module.exports = function(){
     router.post('/dlogin',(req,res) => {
         //验证账号是否存在
         let d = req.body;
-        let sql = `SELECT uid,username,password FROM user WHERE username = ? OR password = ? LIMIT 1`;
+        let sql = `SELECT uid,username,password,header FROM user WHERE username = ? OR password = ? LIMIT 1`;
         mydb.query(sql,[d.dusername,d.dpassword],(err,result) => {
             //input标签里要写name属性,否则后台接收不到数据,result是查出来的数据库值
             console.log(result);
@@ -104,6 +104,13 @@ module.exports = function(){
                 res.json({r:'dpassword_error'});
                 return;
             }
+
+            //登录成功之后将信息存入session
+            req.session.uid = result[0].uid;
+            req.session.username = result[0].username;
+            req.session.header = result[0].header;
+            console.log(req.session);
+            //success响应语句要写在session后面，否则session无法响应到客户端
             res.json({r:'success'});
         })
     })
@@ -112,7 +119,7 @@ module.exports = function(){
     router.post('/slogin',(req,res) => {
         //验证账号是否存在
         let s = req.body;
-        let sql = `SELECT sid,sname,spassword FROM serverclass WHERE sname = ? OR spassword = ? LIMIT 1`;
+        let sql = `SELECT sid,sname,spassword,headpic FROM serverclass WHERE sname = ? OR spassword = ? LIMIT 1`;
         mydb.query(sql,[s.susername,s.spassword],(err,result) => {
             console.log(result);
             //判断用户是否存在
@@ -125,6 +132,11 @@ module.exports = function(){
                 res.json({r:'spassword_error'});
                 return;
             }
+
+            req.session.uid = result[0].sid;
+            req.session.username = result[0].sname;
+            req.session.header = result[0].headpic;
+
             res.json({r:'success'});
         })
     })
