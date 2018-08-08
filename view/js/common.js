@@ -76,7 +76,7 @@ function login() {
                     $('#dpassword').parent().addClass('has-error');
                     $('#dpassword').next().html('password_error');
                 }else{
-                    window.location.href = '/user';
+                    window.location.href = '/info1';
                 }
             }
         })

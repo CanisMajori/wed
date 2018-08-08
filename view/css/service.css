@@ -1,0 +1,82 @@
+.service{
+    width:75%;
+    background-color: gainsboro;
+    margin:0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top:20px;
+    border-radius: 5px;
+
+}
+.item{
+    width: 30%;
+    margin: 16px;
+    height: 275px;
+    background-color: rgba(156, 156, 156, 0.56);
+    border-radius: 5px;
+    position: relative;
+}
+.item>img{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    margin:20px 0 0 31px;
+    display: inline-block;
+}
+.xinxi{
+    display: inline-block;
+    width:150px;
+    height:100px;
+    position: absolute;
+    top:37px;
+    right: 50px;
+}
+.xinxi>h4{
+    margin-top: 0;
+    line-height: 30px;
+    text-align: center;
+    font-family: "Microsoft YaHei UI Heavy" ;
+}
+.zongzhi{
+    margin:20px 0 0 20px;
+    width:80%;
+    font-size:18px;
+    border-radius:5px;
+}
+.zongzhi1{
+    margin:2px 0 0 30px;
+    width:280px;
+    word-wrap:break-word;/*强制换行*/
+    font-size:17px;
+    border-radius: 5px;
+}
+
+.mybtn{
+    text-align: center;
+    background-color: lightsteelblue;
+    position: absolute;
+    bottom: 17px;
+    left:37px;
+}
+.glyphicon-arrow-up{
+    position: fixed!important;/*被bootstrap默认覆盖 所以加上important*/
+    right: 0;
+    top:600px!important;
+    width:40px;
+    height: 40px;
+    font-size: 30px;
+
+}
+.top{
+    position: fixed;
+    right: 0;
+    top:630px;
+    font-size: 12px;
+    display: inline-block;
+}
+#top{
+    text-decoration: none;
+    color: gray;
+    text-decoration: none;
+}

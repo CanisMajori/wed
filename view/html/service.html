@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/d_ope.css">
+    <link rel="stylesheet" href="../css/service.css">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>普通用户操作</title>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="row nav_row">
+            <!--logo-->
+            <div class="col-sm-1 col-xs-1 class_1"><a href="#" id="logo">SoulMate</a></div>
+            <!--link-->
+            <div class="col-sm-4 col-xs-4 col-sm-offset-3 col-xs-offset-3 class_1">
+                <div class="link">
+                    <ul>
+                        <li><a href="###"><span>home</span></a></li>
+                        <li><a href="#"><span>case</span></a></li>
+                        <li><a href="./service"><span>service</span></a></li>
+                        <li><a href="./custom"><span>custum</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- avatar/login-out -->
+            <div class="col-sm-2 col-xs-2 col-sm-offset-2 col-xs-offset-2 class_1">
+                <div class="avatar">
+                    <a href="#" class="person"><img src="../img/avatar.jpg" alt="头像"></a>
+                    <div><a href="./" class="loginOut"><span>退出登录</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="service">
+
+    <%
+    let n=0;
+    for(let q of sclass){
+        n++;
+    %>
+
+
+    <div class="item">
+        <img src="../img/reg1background.jpg" alt="头像未加载"><!--这里在头像上传后改成q.headpic-->
+        <div class="xinxi">
+            <h4 class="sname"><%= q.sname %></h4>
+            <h4><%= q.sclass %></h4>
+        </div>
+        <p class="zongzhi">服务宗旨：</p>
+        <p class="zongzhi1"><%= q.zongshi %></p>
+        <button class="btn btn-default btn-lg mybtn" data-toggle="modal" nid="<%=q.sid%>" data-target="#myModal">
+            添加到心愿单
+        </button>
+        <input type="hidden" value="<%= q.sid%>" id="n">
+        <!--模态框组件-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            确认加入心愿单？？？
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        添加成功之后可进入个人中心查看联系方式
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                        </button>
+                        <button type="button" class="btn btn-primary mybtn2"  nid="<%=q.sid%>" data-dismiss="modal">
+                            确认加入
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+    <%}%>
+
+
+    <input type="hidden" id="nid" name="nid" value="">
+</div>
+</body>
+<a href="#logo" id="top">
+<span class="glyphicon glyphicon-arrow-up"></span>
+<span class="top">回到顶部</span>
+</a>
+<script src="../js/service.js"></script>
+</html>

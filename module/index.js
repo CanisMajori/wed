@@ -13,12 +13,6 @@ module.exports = function(){
     router.get('/login',(req,res)=>{
         res.render('html/login');
     });
-
-    //渲染info页面
-    router.get('/info',(req,res) => {
-        res.render('html/info');
-    });
-
     //渲染普通人员注册页面
     router.get('/reg1',(req,res) => {
         res.render('html/reg1');
@@ -113,7 +107,7 @@ module.exports = function(){
             //success响应语句要写在session后面，否则session无法响应到客户端
             res.json({r:'success'});
         })
-    })
+    });
 
     //验证服务型用户登录页面
     router.post('/slogin',(req,res) => {
@@ -139,7 +133,36 @@ module.exports = function(){
 
             res.json({r:'success'});
         })
-    })
+    });
 
+    //需求型用户登录成功
+    router.get('/info1',(req,res)=>{
+        res.render('html/d_ope');
+    });
+    //渲染需求性用户的service
+    router.get('/service',(req,res)=>{
+        let sql=`select * from serverclass where status=0`;
+        mydb.query(sql,(err,result)=>{
+            if(err){
+                console.log(err);
+            }else{
+                // console.log(result);
+                res.render('html/service',{sclass:result});
+            }
+        });
+
+    });
+    //存起用户的心愿单
+    router.post('/save',(req,res)=>{
+        console.log(req);
+        let sql=`insert into xinyuandan(uid,sid) value(?,?)`;
+        mydb.query(sql,[req.session.uid,req.body.sid],(err,result)=>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log('成功把'+req.body.sid+'加到'+req.session.uid+'中');
+            }
+        });
+    });
     return router;
-}
+};
