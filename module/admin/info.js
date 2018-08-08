@@ -34,7 +34,7 @@ module.exports = function () {
                 res.json({r:'password_err'})
             }else{
                 let sql=`UPDATE admin SET password = ?  WHERE aid = ? LIMIT 1`;
-                mydb.query(sql,[p.password2,req.session.aid],(err,result)=>{
+                mydb.query(sql,[md5(p.password2),req.session.aid],(err,result)=>{
                     if(err){
                         console.log(err);
                     }
@@ -48,7 +48,9 @@ module.exports = function () {
     });
 
     //成功案列管理
-
+    router.get('/story',(req,res)=>{
+        res.render('admin/story')
+    });
 
     //服务型用户管理
     router.get('/success',(req,res) => {
@@ -62,7 +64,5 @@ module.exports = function () {
         });
     });
     //删除用户操作
-
-
     return router;
-}
+};
