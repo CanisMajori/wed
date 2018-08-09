@@ -3,6 +3,15 @@
  */
 module.exports = function () {
     let router = express.Router();
+    //session验证，用户进行操作前必须先进行登录
+    router.use((req,res,next) => {
+        if(!req.session.uid){
+            res.redirect('/');
+            return;
+        }
+
+        next();
+    });
 
     //渲染个人中心页面
     // 路由写/user访问不到路径，因为/就直接代表入口文件里的子路由

@@ -28,6 +28,14 @@ module.exports = function(){
         res.render('html/custom');
     });
 
+    //退出登录
+    router.get('/logOut',(req,res) => {
+        delete req.session.uid;
+        delete req.session.username;
+        delete req.session.header;
+        res.redirect('/');
+    })
+
     //普通用户注册按钮
     router.post('/reg1.do',(req,res)=>{
         let p = req.body;
