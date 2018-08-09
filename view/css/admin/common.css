@@ -94,8 +94,26 @@ ul li{
     margin-top:50px;
 }
 .succ{
-    width:80%;
+    width: 83%;
     float: right;
-    margin-right:50px;
-    margin-top:50px;
+    margin-right: 50px;
+
+}
+#fenye{
+    margin-left: 206px;
+}
+.breadcrumb{
+    margin-bottom: 7px!important;
+}
+.delc1,.delc2{
+    display: inline-block;
+    width: 54px;
+    height: 27px;
+    background-color: #cececed6;
+    border-radius: 9px;
+    text-align: center;
+    color: black;
+}
+.delc1,.delc2:hover{
+    box-shadow: 0 0 5px 0 gray;
 }

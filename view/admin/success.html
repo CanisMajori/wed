@@ -64,11 +64,6 @@
     <!-- 主题部分 start-->
 
 
-
-
-
-    <footer height="40px" class="footer">2018 © 股份有限公司-版权所有</footer>
-    </section>
     <!-- 主题部分 end-->
 </div>
 <ol class="breadcrumb succ">
@@ -80,6 +75,28 @@
     </li>
     <li class="active">服务人员管理</li>
 </ol>
+<nav aria-label="Page navigation">
+    <ul class="pagination" id="fenye">
+        <li>
+            <a href="/admin/info/success?page=<%=page-1 < 1 ? 1:(page-1)%><%=urlext%>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <%for(let p = start; p <= end; p++){%>
+        <li<%-p==page ? ' class="active"':''%>>
+        <a href="/admin/info/success?page=<%=p%><%=urlext%>"><%=p%>
+
+        </a>
+
+        </li>
+        <%}%>
+        <li>
+            <a href="/admin/info/success?page=<%=page*1+1 >totalpage ? totalpage:(page*1+1)%><%=urlext%>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 <table class="table table-bordered succ">
     <tr>
         <th>ID</th>
@@ -93,19 +110,19 @@
     </tr>
     <%
     let n = 0;
-    for(let qc of serverclasslist){
+    for(let qc of serverlist){
     n++;
     %>
     <tr>
-        <td><%=n%></td>
+        <td><%=qc.sid%></td>
         <td><%=qc.sname%></td>
         <td><%=qc.sclass%></td>
         <td><%=qc.zongshi%></td>
         <td><%=qc.tel%></td>
         <td><%=qc.email%></td>
-        <td><%=qc.regtimes%></td>
+        <td><%=qc.regtimes.toLocaletoString()%></td>
         <td>
-            <a href="javascript:void(0)" class="delc2" qcid="<%=qc.uid%>">删除</a>
+            <a href="javascript:void(0)" class="delc2" qcid="<%=qc.sid%>">删除</a>
         </td>
     </tr>
     <%}%>
@@ -114,6 +131,7 @@
 
 </table>
 
+<footer height="40px" class="footer">2018 © 股份有限公司-版权所有</footer>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../../js/admin/admin.js"></script>

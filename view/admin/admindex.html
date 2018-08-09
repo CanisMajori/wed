@@ -4,10 +4,32 @@
             <a href="#">首页</a>
         </li>
         <li>
-            <a href="#">成功案列</a>
+            <a href="#">用户</a>
         </li>
         <li class="active">用户管理</li>
     </ol>
+    <nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            <a href="/admin/info?page=<%=page-1 < 1 ? 1:(page-1)%><%=urlext%>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <%for(let p = start; p <= end; p++){%>
+        <li<%-p==page ? ' class="active"':''%>>
+            <a href="/admin/info?page=<%=p%><%=urlext%>"><%=p%>
+
+            </a>
+
+        </li>
+        <%}%>
+        <li>
+            <a href="/admin/info?page=<%=page*1+1 >totalpage ? totalpage:(page*1+1)%><%=urlext%>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
@@ -26,13 +48,13 @@
         n++;
         %>
         <tr>
-            <td><%=n%></td>
+            <td><%=qc.uid%></td>
             <td><%=qc.username%></td>
             <td><%=qc.sign%></td>
             <td><%=qc.tel%></td>
             <td><%=qc.email%></td>
-            <td><%=qc.regtime%></td>
-            <td><%=qc.lasttime%></td>
+            <td><%=qc.regtime.toLocaleString()%></td>
+            <td><%=qc.lasttime.toLocaleString()%></td>
             <td><%=qc.loginnum%></td>
             <td>
                 <a href="javascript:void(0)" class="delc1" qcid="<%=qc.uid%>">删除</a>
