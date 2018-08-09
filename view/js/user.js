@@ -27,7 +27,7 @@ function uploadheader() {
             processData: false,//不需要对数据做处理
             contentType: false,//不需要改变内容类型，因为前面已经申明了是formData对象
             success:function (result) {
-                console.log(result);
+                //console.log(result);
                 $('#myheader').attr('src', result.path);
                 // <input type="hidden" name="myheader" value="">
                 $('input[name="myheader"]').val(result.path);

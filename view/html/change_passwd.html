@@ -1,0 +1,32 @@
+<% include nav.html%>
+<div class="row">
+    <% include aside_left.html %>
+    <div class="col-sm-8 col-xs-8 class_2">
+        <!--内容-->
+        <section class="content">
+            <form>
+                <div class="form-group">
+                    <label for="old_passwd">Please enter the original password:</label>
+                    <input type="password" class="form-control" id="old_passwd" >
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label for="new_passwd1">Please enter a new password:</label>
+                    <input type="password" class="form-control" id="new_passwd1" >
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label for="new_passwd2">Please confirm the new password:</label>
+                    <input type="password" class="form-control" id="new_passwd2" >
+                    <span></span>
+                </div>
+                <button type="button" class="btn btn-default changePasswd">Submit</button>
+            </form>
+        </section>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/change_passwd.js"></script>
+</html>

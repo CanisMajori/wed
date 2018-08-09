@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8051776-bff4-4284-8188-95721d4425fa" name="Default" comment="">
+    <list default="true" id="c8051776-bff4-4284-8188-95721d4425fa" name="Default" comment="退出登录">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/dicer/test/fixtures/many-noend/part2" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/dicer/test/fixtures/many-noend/part3" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/dicer/test/fixtures/many-noend/part4" />
@@ -885,7 +885,14 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xtend/mutable.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xtend/package.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xtend/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/aside_left.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/change_passwd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/js/change_passwd.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/user.js" afterPath="$PROJECT_DIR$/module/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/user.html" afterPath="$PROJECT_DIR$/view/html/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/js/user.js" afterPath="$PROJECT_DIR$/view/js/user.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -932,6 +939,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -947,12 +955,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
@@ -1006,6 +1013,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1040,7 +1053,9 @@
       <option name="presentableId" value="Default" />
       <updated>1533518161019</updated>
       <workItem from="1533518162403" duration="21000" />
-      <workItem from="1533777048000" duration="1023000" />
+      <workItem from="1533777048000" duration="1379000" />
+      <workItem from="1533778571852" duration="17000" />
+      <workItem from="1533785741680" duration="37000" />
     </task>
     <task id="LOCAL-00001" summary="退出登录">
       <created>1533777783034</created>
@@ -1049,11 +1064,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533777783034</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="退出登录">
+      <created>1533778102688</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1533778102688</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1044000" />
+    <option name="totallyTimeSpent" value="1454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
