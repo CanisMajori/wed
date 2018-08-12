@@ -30,13 +30,21 @@ module.exports = function(){
 
     //成功案例
     router.get('/successwork',(req,res)=>{
+        if(!req.session.uid&&!req.session.sid){
+            res.render('html/login');
+        }
         let sql=`select * from win where 1`;
         mydb.query(sql,(err,result)=>{
             if(err){
                 console.log(err);
             }else{
-                console.log(result);
-                res.render('html/successwork',{win:result});
+                // console.log(result);
+                let n=result.length;
+                res.render('html/successwork',{
+                    win:result,
+                    n:n,
+                    header:req.session.header,
+                });
             }
         });
     });
@@ -44,9 +52,13 @@ module.exports = function(){
     //风俗页面返回首页按钮
     router.get('/shouye',(req,res)=>{
         if(req.session.uid){
-            res.render('html/d_ope');
+            res.render('html/d_ope',{
+                header:req.session.header
+            });
         }else if(req.session.sid){
-            res.render('html/shtml/s_ope');
+            res.render('html/shtml/s_ope',{
+                header:req.session.header
+            });
         }else{
             res.render('html/index');
         }
@@ -69,7 +81,7 @@ module.exports = function(){
     //普通用户注册按钮
     router.post('/reg1.do',(req,res)=>{
         let p = req.body;
-        console.log(p);
+        // console.log(p);
         if(!p.passwd1){
             res.json({r:'passwd_no'});
             return ;
@@ -94,14 +106,14 @@ module.exports = function(){
     //服务人员注册按钮
     router.post('/reg2.do',(req,res)=>{
         let p = req.body;
-        console.log(p);
+        // console.log(p);
         if(!p.passwd1){
             res.json({r:'passwd_no'});
             return ;
         }
         let sql = `SELECT sid FROM serverclass WHERE sname = ? LIMIT 1`;
         mydb.query(sql, p.sname, (err, result)=>{
-            console.log(result);
+            // console.log(result);
             if(result.length){
                 res.json({r:'username_existed'});
             }else{
@@ -129,7 +141,7 @@ module.exports = function(){
         let sql = `SELECT uid,username,password,header FROM user WHERE username = ? OR password = ? LIMIT 1`;
         mydb.query(sql,[d.dusername,d.dpassword],(err,result) => {
             //input标签里要写name属性,否则后台接收不到数据,result是查出来的数据库值
-            console.log(result);
+            // console.log(result);
             //判断用户是否存在
             if(!result.length){
                 res.json({r:'dusername_not_exist'});
@@ -145,7 +157,7 @@ module.exports = function(){
             req.session.uid = result[0].uid;
             req.session.username = result[0].username;
             req.session.header = result[0].header;
-            console.log(req.session);
+            // console.log(req.session);
             //success响应语句要写在session后面，否则session无法响应到客户端
             res.json({r:'success'});
         })
@@ -155,9 +167,9 @@ module.exports = function(){
     router.post('/slogin',(req,res) => {
         //验证账号是否存在
         let s = req.body;
-        let sql = `SELECT sid,sname,spassword,headpic FROM serverclass WHERE sname = ? OR spassword = ? LIMIT 1`;
+        let sql = `SELECT * FROM serverclass WHERE sname = ? OR spassword = ? LIMIT 1`;
         mydb.query(sql,[s.susername,s.spassword],(err,result) => {
-            console.log(result);
+            // console.log(result);
             //判断用户是否存在
             if(!result.length){
                 res.json({r:'susername_not_exist'});
@@ -173,7 +185,6 @@ module.exports = function(){
             req.session.username = result[0].sname;
             req.session.sclass = result[0].sclass;
             req.session.header = result[0].headpic;
-
             res.json({r:'success'});
         })
     });
@@ -196,28 +207,29 @@ module.exports = function(){
                 console.log(err);
             }else{
                 // console.log(result);
-                res.render('html/service',{sclass:result});
+                res.render('html/service',{sclass:result,header:req.session.header});
             }
         });
 
     });
     //存起用户的心愿单
     router.post('/save',(req,res)=>{
-        console.log(req);
+        // console.log(req);
         let sql=`insert into xinyuandan(uid,sid) value(?,?)`;
         mydb.query(sql,[req.session.uid,req.body.sid],(err,result)=>{
             if(err){
                 console.log(err);
             }else{
-                console.log('成功把'+req.body.sid+'加到'+req.session.uid+'中');
+                // console.log('成功把'+req.body.sid+'加到'+req.session.uid+'中');
             }
         });
     });
     //服务型用户登录成功
     router.get('/info2',(req,res)=>{
-        res.render('html/shtml/s_ope');
+        res.render('html/shtml/s_ope',{
+            header:req.session.header
+        });
     });
-
     //渲染checkuser页面
     router.get('/checkuser',(req,res)=>{
         if(!req.session.sid){
@@ -233,8 +245,10 @@ module.exports = function(){
         mydb.query(sql,req.session.sid,(err,result)=>{
 
             if(err) console.log(err);
-            console.log(result);
-            res.render('html/shtml/checkuser',{userlist:result});
+            // console.log(result);
+            res.render('html/shtml/checkuser',{userlist:result,
+                header:req.session.header
+            });
         });
 
 

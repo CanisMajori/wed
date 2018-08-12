@@ -1,0 +1,68 @@
+<% include snav.html%>
+<div class="row">
+    <% include aside_left.html %>
+    <div class="col-sm-8 col-xs-8 class_2">
+        <!--内容-->
+        <section class="content">
+            <table class="table table-bordered">
+                <tr>
+                    <th>用户名</th>
+                    <th>结婚宣言</th>
+                    <th>电话</th>
+                    <th>邮箱</th>
+                    <th>用户注册时间</th>
+                    <th>操作</th>
+                </tr>
+                <% for(let d of win){ %>
+                <tr>
+                    <td><%=d.username%></td>
+                    <td><%=d.sign%></td>
+                    <td><%=d.tel%></td>
+                    <td><%=d.email%></td>
+                    <td><%=d.regtime.toLocaleString()%></td>
+                    <td>
+                        <a id="sdel" href="###" qcid="<%=d.sid%>">删除</a>
+                        <a id="save" href="###" qcid="<%=d.sid%>">保存</a>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </section>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    window.onload=function () {
+        del();
+    };
+    function del() {
+        $('#del').click(function () {
+            if(!confirm('是否确认删除？')){
+                return ;
+            }
+            //删除
+            let $qcid = $(this).attr('qcid');
+            let This = this;
+            $.ajax({
+                url:'/user/del',
+                type:'POST',
+                data:{sid:$qcid},
+                dataType:'JSON',
+                success:function(result){
+                    console.log(result);
+                    if(result.r == 'ok'){
+                        $(This).parent().parent().remove();
+                    }
+                }
+            });
+        });
+
+    }
+
+
+
+
+</script>
+</html>

@@ -22,7 +22,7 @@ window.onload = function () {
 
 //自动轮播
 function auto_carousel() {
-    $('#carousel_img').carousel({interval:3000});//每隔两秒自动轮播
+    $('#carousel_img').carousel({interval:2000});//每隔两秒自动轮播
 }
 
 //登录页面自动切换

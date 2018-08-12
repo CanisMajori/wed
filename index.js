@@ -88,6 +88,8 @@ server.use('/', require('./module/index')());
 
 //静态资源托管
 server.use('/uploads',express.static('uploads'));
+server.use('/user/uploads',express.static('uploads'));
+server.use('/server/uploads',express.static('uploads'));
 server.use(express.static('view'));
 
 //404处理：样式自定义

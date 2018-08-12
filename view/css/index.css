@@ -135,7 +135,7 @@ a:hover{
     height:720px;
     margin:0 auto;
     border-radius:10px;
-    background-image:url('../img/carousel3.jpg');
+    background-image:url('../img/checkuserbg.jpg');
     background-size: cover;
     position: relative;
 }
@@ -178,7 +178,7 @@ a:hover{
     display: inline-block;
     margin:10px;
     background-color: rgba(2,2,2,0.16);
-    width:324px;
+    width:265px;
     height:80%;
     vertical-align: middle;
     margin-top:113px;

@@ -27,13 +27,15 @@ function refuse() {
 //接受用户请求
 function agree() {
     $('.agree').click(function () {
-        let uid=$('.refuse').attr('qcid');
+        //console.log(2);
+        let uid=$('.agree').attr('qcid');
+        let uname=$('.agree').attr('uname');
         let This=this;
         $.ajax({
             url:'/server/agree',
             type:'post',
             dataType:'json',
-            data:{uid:uid},
+            data:{uid:uid,uname:uname},
             success:function (data) {
                 if(data.r=='ok'){
                     $('.jieshoubtn').click();

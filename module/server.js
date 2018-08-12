@@ -23,10 +23,51 @@ module.exports = function () {
             header:req.session.header
         });
     });
+    router.get('/successwork',(req,res) => {
+        if(!req.session.uid&&!req.session.sid){
+            res.render('html/login');
+        }
+        let sql=`select * from win where 1`;
+        mydb.query(sql,(err,result)=>{
+            if(err){
+                console.log(err);
+            }else{
+                // console.log(result);
+                let n=result.length;
+                res.render('html/successwork',{
+                    win:result,
+                    n:n,
+                    header:req.session.header,
+                });
+            }
+        });
+    });
 
     //渲染修改密码页面
     router.get('/change_passwd',(req,res) => {
-        res.render('html/shtml/change_passwd');
+        res.render('html/shtml/change_passwd',{
+                header:req.session.header
+        });
+    });
+    //s型用户查看选择了自己的用户
+    router.get('/u_s',(req,res) => {
+        let sql=`
+                SELECT *
+                FROM  seccept AS e
+                INNER JOIN user AS x 
+                ON x.uid = e.uid
+                where e.sid=? and e.status=0  and x.status=0;
+
+
+            `;
+        mydb.query(sql,[req.session.sid],(err,result)=>{
+            // console.log(result);
+            res.render('html/shtml/u_s',{
+                 win:result
+                ,header:req.session.header
+            });
+        });
+
     });
 
     //修改密码的数据库验证
@@ -37,8 +78,8 @@ module.exports = function () {
         //判断原密码是否正确
         let sql = `SELECT sid,password,sname FROM server WHERE sname = ? LIMIT 1`;
         mydb.query(sql,req.session.username,(err,result) => {
-            console.log('-------------------------');
-            console.log(result);
+            // console.log('-------------------------');
+            // console.log(result);
             //result是一个数组，数组元素是对象，所以要加下标0才能取到第一个对象
             if(md5(oldPasswd) != result[0].password){
                 res.json({r:'old_passwd_err'});
@@ -54,14 +95,14 @@ module.exports = function () {
             }
 
         })
-    })
+    });
 
     //将头像存入数据库
     router.post('/saveheader',(req,res) => {
         let header = req.body.header;
         //console.log(header);
         let sql = `UPDATE server SET headpic = ? WHERE sid = ? LIMIT 1`;
-        mydb.query(sql,[header,req.session.uid],(err,result) => {
+        mydb.query(sql,[header,req.session.sid],(err,result) => {
             res.json({r:'ok'});
         })
     });
@@ -82,7 +123,11 @@ module.exports = function () {
         let sclass=req.session.sclass;
         //把 当前的登录的s型用户和选择该s型用户的d型用户存入win中
         //?????待修改******************************************************************
-        res.json({r:'ok'});
+        let sql=`insert into seccept (username,uid,sid,sname) values(?,?,?,?)`;
+        mydb.query(sql,[req.body.uname,req.body.uid,req.session.sid,req.session.username],(err,result)=>{
+            res.json({r:'ok'});
+        });
+        //todo:怎么让接受之后和成功案例表联系起来？？？？
         // let sql=`insert into win (uid,${sclass}) value(?,?) `;
         // mydb.query(sql,[req.body.uid,req.session.username],(err,result)=>{
         //     if(err) console.log(err);

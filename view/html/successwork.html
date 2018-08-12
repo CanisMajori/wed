@@ -1,11 +1,14 @@
-<%include top.html%>
-
+<% include nav.html%>
+<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/common.css">
 <div class="middle">
     <img class="middle-btn" id="leftbtn" src="../img/left.png">
     <img class="middle-btn" id="rightbtn" src="../img/right.png">
     <div class="middle-row">
         <div class="item">
         <% for(let q of win) {%>
+            <input  type="hidden" n='<%=n%>' id='n' >
             <div class="item-info">
                 <p>新人：<%=q.username%></p>
                 <p>主持人：<%=q.主持人%></p>
@@ -18,7 +21,6 @@
             </div>
 <%}%>
         </div>
-        <input type="hidden" id="wid" wid=<%=win[win.length-1].wid%>
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/successwork.js"></script>

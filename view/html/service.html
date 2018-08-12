@@ -34,8 +34,8 @@
             <!-- avatar/login-out -->
             <div class="col-sm-2 col-xs-2 col-sm-offset-2 col-xs-offset-2 class_1">
                 <div class="avatar">
-                    <a href="/user" class="person"><img src="../img/avatar.jpg" alt="头像"></a>
-                    <div><a href="/logOut" class="loginOut"><span>退出登录</span></a></div>
+                    <a href="/user" class="person"><img src="<%=header%>" alt="头像"></a>
+                    <div><a href="/logOut" class="loginOut"><span>logOut</span></a></div>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
 
 
     <div class="item">
-        <img src="../img/reg1background.jpg" alt="头像未加载"><!--这里在头像上传后改成q.headpic-->
+        <img src="<%=q.headpic%>" alt="头像未加载"><!--这里在头像上传后改成q.headpic-->
         <div class="xinxi">
             <h4 class="sname"><%= q.sname %></h4>
             <h4><%= q.sclass %></h4>
@@ -91,6 +91,7 @@
         </div>
     </div>
     <%}%>
+
 
 
     <input type="hidden" id="nid" name="nid" value="">
