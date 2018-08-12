@@ -22,7 +22,7 @@ window.onload = function () {
 
 //自动轮播
 function auto_carousel() {
-    $('#carousel_img').carousel({interval:1000});//每隔两秒自动轮播
+    $('#carousel_img').carousel({interval:3000});//每隔两秒自动轮播
 }
 
 //登录页面自动切换
@@ -119,7 +119,7 @@ function login() {
                     $('#spassword').parent().addClass('has-error');
                     $('#spassword').next().html('password_error');
                 }else{
-                    window.location.href = '/info';
+                    window.location.href = '/info2';
                 }
             }
         })

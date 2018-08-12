@@ -94,5 +94,8 @@ function reg2(){
 
         })
 
-    })
+    });
+    $('.shouye').click(function () {
+        window.location.href='/shouye';
+    });
 }

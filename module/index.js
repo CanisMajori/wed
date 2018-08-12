@@ -28,14 +28,44 @@ module.exports = function(){
         res.render('html/custom');
     });
 
+    //成功案例
+    router.get('/successwork',(req,res)=>{
+        let sql=`select * from win where 1`;
+        mydb.query(sql,(err,result)=>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log(result);
+                res.render('html/successwork',{win:result});
+            }
+        });
+    });
+
+    //风俗页面返回首页按钮
+    router.get('/shouye',(req,res)=>{
+        if(req.session.uid){
+            res.render('html/d_ope');
+        }else if(req.session.sid){
+            res.render('html/shtml/s_ope');
+        }else{
+            res.render('html/index');
+        }
+    });
+
+
+
     //退出登录
     router.get('/logOut',(req,res) => {
         delete req.session.uid;
         delete req.session.username;
         delete req.session.header;
         res.redirect('/');
-    })
+    });
 
+
+
+
+    //注册模块start**************
     //普通用户注册按钮
     router.post('/reg1.do',(req,res)=>{
         let p = req.body;
@@ -87,7 +117,11 @@ module.exports = function(){
             }
         });
     });
+    //*******end***************
 
+
+
+    //登录模块start**********************************
     //验证需求型用户登录页面
     router.post('/dlogin',(req,res) => {
         //验证账号是否存在
@@ -135,13 +169,15 @@ module.exports = function(){
                 return;
             }
 
-            req.session.uid = result[0].sid;
+            req.session.sid = result[0].sid;
             req.session.username = result[0].sname;
+            req.session.sclass = result[0].sclass;
             req.session.header = result[0].headpic;
 
             res.json({r:'success'});
         })
     });
+    //end*****************************************
 
     //需求型用户登录成功
     router.get('/info1',(req,res)=>{
@@ -151,6 +187,9 @@ module.exports = function(){
     });
     //渲染需求性用户的service
     router.get('/service',(req,res)=>{
+        if(!req.session.username){
+            res.render('html/login');
+        }
         let sql=`select * from serverclass where status=0`;
         mydb.query(sql,(err,result)=>{
             if(err){
@@ -173,6 +212,34 @@ module.exports = function(){
                 console.log('成功把'+req.body.sid+'加到'+req.session.uid+'中');
             }
         });
+    });
+    //服务型用户登录成功
+    router.get('/info2',(req,res)=>{
+        res.render('html/shtml/s_ope');
+    });
+
+    //渲染checkuser页面
+    router.get('/checkuser',(req,res)=>{
+        if(!req.session.sid){
+            res.render('html/login');
+        }
+
+        let sql=`SELECT  u.username, u.tel, u.email,u.regtime,x.uid
+                 FROM  xinyuandan AS x 
+                 INNER JOIN user AS u 
+                 ON x.uid = u.uid
+                 where x.sid=? and x.status=0`;
+
+        mydb.query(sql,req.session.sid,(err,result)=>{
+
+            if(err) console.log(err);
+            console.log(result);
+            res.render('html/shtml/checkuser',{userlist:result});
+        });
+
+
+
+
     });
     return router;
 };

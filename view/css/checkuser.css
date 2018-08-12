@@ -1,0 +1,30 @@
+.body{
+    width:100%;
+    background-image: url('../img/checkuserbg.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 700px;
+    padding-top: 50px;
+}
+.table-bordered{
+    width: 80%;
+    margin:0px auto;
+    color: #000;
+    font-weight: 500;
+
+}
+.item{
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+
+}
+.biaoti>th{
+    text-align: center;
+}
+
+.item>td{
+    line-height: 50px!important;
+    padding:0;
+    font-size: 16px;
+}

@@ -87,7 +87,7 @@ a:hover{
 }
 .item img{
     width: 100%;
-    height:600px!important;
+    height:720px!important;
 }
 .show_case{
     width: 100%;
@@ -129,3 +129,78 @@ a:hover{
     text-align: center;
     line-height: 50px;
 }
+/*successwork的css  start***********************/
+.middle{
+    width:100%;
+    height:720px;
+    margin:0 auto;
+    border-radius:10px;
+    background-image:url('../img/carousel3.jpg');
+    background-size: cover;
+    position: relative;
+}
+.middle-btn{
+
+    width:52px;
+    height: 52px;
+    opacity:0.3;
+}
+#leftbtn{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    cursor: pointer;
+}
+#rightbtn{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    cursor: pointer;
+}
+.middle-row{
+    position: absolute;
+    top:0;
+    right: 12%;
+    width: 76%;
+    height:100%;
+    background-color:rgba(22,244,22,0);
+    overflow: hidden;
+
+}
+.item{
+    position: absolute;
+    top:0;
+    height:100%;
+    left:0;
+    white-space:nowrap;
+}
+.item-info{
+    display: inline-block;
+    margin:10px;
+    background-color: rgba(2,2,2,0.16);
+    width:324px;
+    height:80%;
+    vertical-align: middle;
+    margin-top:113px;
+    border-radius: 10px;
+}
+.item-info>p{
+    width: 80%;
+    height: 42px;
+    line-height: 42px;
+    margin: 26px auto;
+    background-color: rgba(3,3,3,0.1);
+    color: black;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.item-info:hover{
+    box-shadow: 1px 1px 15px 1px slategray;
+    transition: all 0.5s;
+}
+.item-info>p:hover{
+    width: 81%;
+    height: 43px;
+    box-shadow:  1px 1px 15px 1px slategray;
+}
+/*successwork的css  end***********************/

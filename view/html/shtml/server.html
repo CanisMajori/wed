@@ -1,0 +1,24 @@
+<% include nav.html%>
+<div class="row">
+    <% include aside_left.html %>
+    <div class="col-sm-8 col-xs-8 class_2">
+        <!--内容-->
+        <section class="content">
+            <h3>修改个人头像</h3>
+            <form>
+                <button type="button" class="btn btn-default uploadheader">上传头像</button>
+                <input type="file" class="hide" id="header" accept="image/jpeg, image/png, image/gif, image/bmp, image/svg" name="header">
+                <br>
+                <img src="<%=header%>" alt="" id="myheader">
+                <input type="hidden" name="myheader" value="<%=header%>">
+                <br>
+                <button type="button" class="btn btn-default saveheader">保存</button>
+            </form>
+        </section>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../js/user.js"></script>
+</html>

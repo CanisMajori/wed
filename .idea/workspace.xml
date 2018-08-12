@@ -9,10 +9,12 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/dicer/test/fixtures/many/part3" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/dicer/test/fixtures/many/part4" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/dicer/test/fixtures/many/part6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/0279d8df86008d24c80e28c24ad2475f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/584c7e5ad4522c66c726e1ec98372118" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/ef8b75103225b4b45b22eea552a3acd2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/f1a5d2878ce149730875355b0887333a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/bf3b79483c9290c6837998108ce826df" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/img/background.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/img/checkuserbg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/img/left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/img/right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/server.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/mime" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/mime.cmd" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/mkdirp" />
@@ -889,16 +891,41 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xtend/mutable.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xtend/package.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/xtend/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/css/choose_people.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/choose_people.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/css/checkuser.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/shtml/aside_left.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/shtml/change_passwd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/shtml/checkuser.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/shtml/nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/shtml/s_ope.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/shtml/server.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/html/successwork.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/js/custom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/js/server/change_passwd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/js/server/checkuser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/js/successwork.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/carousel1.jpg" afterPath="$PROJECT_DIR$/view/img/carousel1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/carousel2.jpg" afterPath="$PROJECT_DIR$/view/img/carousel2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/carousel3.jpg" afterPath="$PROJECT_DIR$/view/img/carousel3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/case1.jpg" afterPath="$PROJECT_DIR$/view/img/case1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/case2.jpg" afterPath="$PROJECT_DIR$/view/img/case2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/case3.jpg" afterPath="$PROJECT_DIR$/view/img/case3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/img/case4.jpg" afterPath="$PROJECT_DIR$/view/img/case4.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/index.js" afterPath="$PROJECT_DIR$/module/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/user.js" afterPath="$PROJECT_DIR$/module/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/aside_left.html" afterPath="$PROJECT_DIR$/view/html/aside_left.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/css/custom.css" afterPath="$PROJECT_DIR$/view/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/css/index.css" afterPath="$PROJECT_DIR$/view/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/css/reg1.css" afterPath="$PROJECT_DIR$/view/css/reg1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/custom.html" afterPath="$PROJECT_DIR$/view/html/custom.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/d_ope.html" afterPath="$PROJECT_DIR$/view/html/d_ope.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/index.html" afterPath="$PROJECT_DIR$/view/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/nav.html" afterPath="$PROJECT_DIR$/view/html/nav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/数据库文件/only.sql" afterPath="$PROJECT_DIR$/数据库文件/only.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/reg1.html" afterPath="$PROJECT_DIR$/view/html/reg1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/reg2.html" afterPath="$PROJECT_DIR$/view/html/reg2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/service.html" afterPath="$PROJECT_DIR$/view/html/service.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/html/top.html" afterPath="$PROJECT_DIR$/view/html/top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/js/common.js" afterPath="$PROJECT_DIR$/view/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/js/user1.js" afterPath="$PROJECT_DIR$/view/js/user1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/js/user2.js" afterPath="$PROJECT_DIR$/view/js/user2.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -917,6 +944,9 @@
   <component name="FavoritesManager">
     <favorites_list name="wed" />
   </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -932,8 +962,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="35" />
-    <option name="y" value="80" />
+    <option name="x" value="45" />
+    <option name="y" value="78" />
     <option name="width" value="1861" />
     <option name="height" value="950" />
   </component>
@@ -952,7 +982,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -989,165 +1019,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adminlogin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap-3.3.7-dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1248,7 +1126,8 @@
       <workItem from="1533799145118" duration="1739000" />
       <workItem from="1533863055991" duration="2510000" />
       <workItem from="1533898377615" duration="52000" />
-      <workItem from="1534068320226" duration="105000" />
+      <workItem from="1534068320226" duration="513000" />
+      <workItem from="1534068905889" duration="811000" />
     </task>
     <task id="LOCAL-00001" summary="退出登录">
       <created>1533777783034</created>
@@ -1271,24 +1150,48 @@
       <option name="project" value="LOCAL" />
       <updated>1533799807491</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="gwj：添加选择人员页面">
+      <created>1534068499965</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1534068499965</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加s型子路由">
+      <created>1534070296832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534070296833</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5860000" />
+    <option name="totallyTimeSpent" value="7079000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="80" width="1861" height="950" extended-state="0" />
+    <frame x="45" y="78" width="1861" height="950" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2596472" sideWeight="0.4954023" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986765" sideWeight="0.5045977" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37595907" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1311,10 +1214,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="退出登录" />
     <MESSAGE value="管理员的分页" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员的分页" />
+    <MESSAGE value="gwj：添加选择人员页面" />
+    <MESSAGE value="添加s型子路由" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加s型子路由" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/view/bootstrap-3.3.7-dist/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="1575" column="30" lean-forward="false" selection-start-line="1575" selection-start-column="30" selection-end-line="1575" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

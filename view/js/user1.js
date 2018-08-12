@@ -95,4 +95,7 @@ function reg(){
     $('.reg2').click(function () {
         window.location.href=('./reg2')
     });
+    $('.shouye').click(function () {
+        window.location.href='/';
+    });
 }

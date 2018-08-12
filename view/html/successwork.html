@@ -1,0 +1,26 @@
+<%include top.html%>
+
+<div class="middle">
+    <img class="middle-btn" id="leftbtn" src="../img/left.png">
+    <img class="middle-btn" id="rightbtn" src="../img/right.png">
+    <div class="middle-row">
+        <div class="item">
+        <% for(let q of win) {%>
+            <div class="item-info">
+                <p>新人：<%=q.username%></p>
+                <p>主持人：<%=q.主持人%></p>
+                <p>婚礼策划：<%=q.策划%></p>
+                <p>婚宴酒店：<%=q.婚宴酒楼%></p>
+                <p>化妆师：<%=q.化妆师%></p>
+                <p>摄影师：<%=q.摄影师%></p>
+                <p>婚礼宣言：<%=q.sign%></p>
+                <p>时刻：<%=q.wintime.toLocaleString()%></p>
+            </div>
+<%}%>
+        </div>
+        <input type="hidden" id="wid" wid=<%=win[win.length-1].wid%>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/successwork.js"></script>
+</div>
+

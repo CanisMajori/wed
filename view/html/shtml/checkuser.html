@@ -1,0 +1,62 @@
+<% include nav.html %>
+<link rel="stylesheet" href="../../css/checkuser.css">
+<div class="body">
+    <table class="table table-bordered" border='0' cellspacing="10">
+        <tr class="biaoti">
+            <th>序号</th>
+            <th>用户名称</th>
+            <th>联系电话</th>
+            <th>联系邮箱</th>
+            <th>注册日期</th>
+            <th>操作</th>
+        </tr>
+        <%
+        let n = 0;
+        for(let qc of userlist){
+        n++;
+        %>
+        <tr class="item">
+            <td><%=n%></td>
+            <td><%=qc.username%></td>
+            <td><%=qc.tel%></td>
+            <td><%=qc.email%></td>
+            <td><%=qc.regtime.toLocaleString()%></td>
+            <td>
+                <a href="javascript:void(0)" class="refuse" qcid="<%=qc.uid%>">拒绝</a>
+                <a href="javascript:void(0)" class="agree" qcid="<%=qc.uid%>">接收</a>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    已成功接受该用户的邀请
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                清进入个人中心查看
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="jieshoubtn" class="btn btn-primary mybtn2" data-dismiss="modal">
+                                    确定
+                                </button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+</div>
+            </td>
+        </tr>
+        <%}%>
+
+
+
+    </table>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/server/checkuser.js"></script>
+</div>
+</body>
+</html>
