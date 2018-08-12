@@ -14,7 +14,7 @@ module.exports = function () {
         next();
     });
 
-    //渲染个人中心页面
+    //渲染个人中心页面,上传头像
     // 路由写/user访问不到路径，因为/就直接代表入口文件里的子路由
     router.get('/',(req,res) => {
         res.render('html/user',{
@@ -24,8 +24,21 @@ module.exports = function () {
 
     //渲染修改密码页面
     router.get('/change_passwd',(req,res) => {
-        res.render('html/change_passwd');
+        res.render('html/change_passwd',{
+            header:req.session.header
+        });
     });
+
+    //渲染选择人员页面
+    router.get('/choose_people',(req,res) => {
+        let sql = `SELECT * FROM serverclass  AS s INNER JOIN xinyuandan AS x ON x.sid = s.sid WHERE x.uid = ?`
+        mydb.query(sql,req.session.uid,(err,result) => {
+            res.render('html/choose_people',{
+                header:req.session.header,
+                result:result
+            });
+        })
+    })
 
     //修改密码的数据库验证
     router.post('/change_passwd',(req,res) => {

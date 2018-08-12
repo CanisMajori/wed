@@ -1,0 +1,35 @@
+<% include nav.html%>
+<div class="row">
+    <% include aside_left.html %>
+    <div class="col-sm-8 col-xs-8 class_2">
+        <!--内容-->
+        <section class="content">
+            <table class="table table-bordered">
+                <tr>
+                    <th>名称</th>
+                    <th>类型</th>
+                    <th>服务宗旨</th>
+                    <th>电话</th>
+                    <th>邮箱</th>
+                    <th>资历</th>
+                    <th>操作</th>
+                </tr>
+                <% for(let d of result){ %>
+                <tr>
+                    <td><%=d.sname%></td>
+                    <td><%=d.sclass%></td>
+                    <td><%=d.zongshi%></td>
+                    <td><%=d.tel%></td>
+                    <td><%=d.email%></td>
+                    <td><%=Math.ceil((new Date() - d.regtimes)/(3600*1000*24))%>日</td>
+                    <td>删除</td>
+                </tr>
+                <% } %>
+            </table>
+        </section>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</html>

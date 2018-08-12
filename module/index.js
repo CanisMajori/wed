@@ -145,7 +145,9 @@ module.exports = function(){
 
     //需求型用户登录成功
     router.get('/info1',(req,res)=>{
-        res.render('html/d_ope');
+        res.render('html/d_ope',{
+            header:req.session.header
+        });
     });
     //渲染需求性用户的service
     router.get('/service',(req,res)=>{
