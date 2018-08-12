@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/d_ope.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <title>服务型用户操作</title>
+</head>
+<body>
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <p>修改密码成功，是否跳转到首页&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+                <button type="button" class="btn btn-primary" id="modal_yes">是</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="row nav_row">
+            <!--logo-->
+            <div class="col-sm-1 col-xs-1 col-sm-offset-1 col-xs-offset-1 class_1"><a href="#" id="logo">SoulMate</a></div>
+            <!--link-->
+            <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 class_1">
+                <div class="link">
+                    <ul>
+                        <li><a href="/info2"><span>home</span></a></li>
+                        <li><a href="/server/successwork"><span>case</span></a></li>
+                        <li><a href="/checkuser"><span>checkuser</span></a></li>
+                        <li><a href="/custom"><span>custum</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- avatar/login-out -->
+            <div class="col-sm-2 col-xs-2 col-sm-offset-1 col-xs-offset-1 class_1">
+                <div class="avatar">
+                    <a href="/server" class="person"><img src="<%=header%>" alt="头像"></a>
+                    <div><a href="/logOut" class="loginOut"><span>logOut</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

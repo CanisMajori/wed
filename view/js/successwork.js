@@ -5,15 +5,19 @@ window.onload=function () {
     move();
 };
 function move() {
-    var n=0;
+    //todo:这里写一个自执行函数，让成功案例自动轮播
+    let n=0;
     $('#leftbtn').click(function () {
-        n=n-300;
-        var wid=$('#wid').attr('wid');
+        n=n-288;
+        // console.log(n);
+        var wid=$('#n').attr('n');
         var width_iteminfo=parseInt($('.item-info').css('width'));
         //获取大盒子宽度
+
+
         var width2=$('.middle-row').css('width');
         var middlerow_width=parseInt(width2);
-        console.log(middlerow_width-((wid)*width_iteminfo));//-6622
+        // console.log(middlerow_width-((wid)*width_iteminfo));//-6622
         
         if(n<(middlerow_width-((wid)*width_iteminfo))) {
             $('.item').css({
@@ -30,7 +34,7 @@ function move() {
 
     });
     $('#rightbtn').click(function () {
-        n=n+300;
+        n=n+288;
 
         if(n>0) {
             $('.item').css({
