@@ -72,6 +72,9 @@ server.post('/upload',upload.single('uploadheader'),(req,res) => {
 //首页
 //路由是一层一层找，把/user放到/后面,就会先找/,找不到/user
 server.use('/user', require('./module/user')());
+
+//s型用户个人中心
+server.use('/server', require('./module/server')());
 server.use('/', require('./module/index')());
 
 
