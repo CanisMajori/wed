@@ -66,7 +66,7 @@ function reg2(){
         if(flag){
             return;
         }
-        console.log(222);
+        // console.log(222);
         //ajax验正
         $.ajax({
             url:'./reg2.do',
