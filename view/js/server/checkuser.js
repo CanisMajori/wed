@@ -27,7 +27,7 @@ function refuse() {
 //接受用户请求
 function agree() {
     $('.agree').click(function () {
-        console.log(2);
+        //console.log(2);
         let uid=$('.agree').attr('qcid');
         let uname=$('.agree').attr('uname');
         let This=this;
