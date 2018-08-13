@@ -129,8 +129,108 @@ module.exports = function () {
 
     //成功案列管理
     router.get('/story',(req,res)=>{
-        res.render('admin/story')
+        let page=req.query.page?req.query.page:1;
+        //每页条数
+        let pagenum=6;
+        //总页数
+        let totalpage=1;
+        //链接地址扩展信息
+        let urlext='';
+        async.series({
+            qclist:function (cb) {
+                //获取分类信息
+                let sql=`select * from win where status=0`;
+                mydb.query(sql,(err,results)=>{
+                    cb(null,results);
+                })
+            },
+            totalnums:function (cb) {
+                let sql=`select count(wid) as totalnums from win where status=0`;
+                //根据分类查询试题
+
+                mydb.query(sql,(err,result)=>{
+
+                    cb(null,result[0].totalnums);
+                });
+
+            },
+            //查询所有并显示到页面
+            userlist:function (cb) {
+                let sql=`select * from win where status=0`;
+
+
+                //查询当前页
+                sql+=` limit ${pagenum*(page-1)}, ${pagenum}`;
+                mydb.query(sql,(err,result)=>{
+                    cb(null,result);//result是 数组
+                    //console.log(result);
+                });
+            }
+
+
+        },(err,results)=>{
+            //totalnums  存的是满足条件的总记录数
+            //计算总页数
+            totalpage = Math.ceil(results.totalnums / pagenum);
+            results.totalpage = totalpage;
+            results.page = page;
+            //显示前后3页  end - start = showpage - 1        6  7  8  9  10  11  12
+            let showpage =5;
+            let start = page - Math.ceil((showpage-1)/2);
+            let end = page + Math.floor((showpage-1)/2);
+            //开始页数不能小于  1
+            if(start < 1){
+                start   = 1;
+                end     = showpage - 1 + start;
+            }
+            //结束页码不能大于总页数
+            if(end > totalpage){
+                end     = totalpage;
+                start   = end + 1 - showpage;
+                //开始页数不能小于  1
+                if(start < 1){
+                    start = 1;
+                }
+            }
+            results.start = start;
+            results.end = end;
+            //链接地址里面查询信息
+            results.urlext = urlext;
+            // console.log(results);
+            res.render('admin/story',{
+                winlist:results.userlist,
+                page:page,
+                urlext:urlext,
+                start:start,
+                end:end,
+                totalpage:totalpage,
+
+            });
+        });
+        //****************************************
+        //     let sql=`select * from user where status=0`;
+        //     mydb.query(sql,(err,result)=>{
+        //         if(err){
+        //             console.log(err);
+        //         }
+        //         console.log(result);
+        //         res.render('admin/admindex',{userlist:result});
+        //     });
     });
+    //删除成功案例
+    router.post('/windel',(req,res) =>{
+        // console.log(req.body);
+        let sql=`update win set status= 1 where wid=?`;
+        mydb.query(sql,req.body.qcid,(err,result)=>{
+            if(err){
+                console.log(err);
+                res.json({r:'db_err'})
+            }else{
+                res.json({r:'ok'})
+            }
+        });
+    });
+
 
     //服务型用户管理
     router.get('/success',(req,res) => {

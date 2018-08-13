@@ -4,6 +4,9 @@ window.onload = function () {
     delClass();
     //管理员修改密码
     chengepassword();
+
+    //删除成功案例
+    delwin();
 }
 
     function chengepassword(){
@@ -80,6 +83,49 @@ function delClass() {
         let This = this;
         $.ajax({
             url:'/admin/info/del1',
+            type:'POST',
+            data:{qcid:$qcid},
+            dataType:'JSON',
+            success:function(result){
+                console.log(result);
+                if(result.r == 'ok'){
+                    $(This).parent().parent().remove();
+                }
+            }
+        });
+    });
+    //删除服务人员信息
+    $('.delc2').click(function () {
+        if(!confirm('是否确认删除？')){
+            return ;
+        }
+        let $qcid = $(this).attr('qcid');
+        let This = this;
+        $.ajax({
+            url:'/admin/info/del2',
+            type:'POST',
+            data:{qcid:$qcid},
+            dataType:'JSON',
+            success:function(result){
+                console.log(result);
+                if(result.r == 'ok'){
+                    $(This).parent().parent().remove();
+                }
+            }
+        });
+    });
+}
+
+function delwin() {
+    $('.delwin').click(function () {
+        if(!confirm('是否确认删除？')){
+            return ;
+        }
+        //删除普通用户对应的信息 通过主键来对应
+        let $qcid = $(this).attr('qcid');
+        let This = this;
+        $.ajax({
+            url:'/admin/info/windel',
             type:'POST',
             data:{qcid:$qcid},
             dataType:'JSON',

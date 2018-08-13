@@ -1,10 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台管理系统</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/admin/common.css">
 </head>
+
 <body>
-    成功案例管理...
+<div class="container-fluid">
+    <!-- 顶部导航 start -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <p style="font-size: 20px;margin-top:10px;margin-left: 20px">soul mate后台管理</p>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">管理员操作
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/admin/info/chengepassword">修改密码</a>
+                            </li>
+                            <li>
+                                <a href="/admin/login/logout">退出登录</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 顶部导航  end -->
+
+    <!-- 侧边导航  start -->
+    <aside class="H4-left">
+        <ul class="menu">
+            <li class="f">数据管理</li>
+            <li class="c">
+                <ul>
+                    <li>
+                        <a href="/admin/info">用户管理</a>
+                    </li>
+                    <li>
+                        <a href="/admin/info/story">成功案例</a>
+                    </li>
+                    <li>
+                        <a href="/admin/info/success">服务型用户管理</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </aside>
+    <!-- 侧边导航 end -->
+    <!-- 主题部分 start-->
+
+
+    <!-- 主题部分 end-->
+</div>
+<ol class="breadcrumb succ">
+    <li>
+        <a href="#">首页</a>
+    </li>
+
+    <li class="active">成功案例管理</li>
+</ol>
+<nav aria-label="Page navigation">
+    <ul class="pagination" id="fenye">
+        <li>
+            <a href="/admin/info/story?page=<%=page-1 < 1 ? 1:(page-1)%><%=urlext%>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <%for(let p = start; p <= end; p++){%>
+        <li<%-p==page ? ' class="active"':''%>>
+        <a href="/admin/info/story?page=<%=p%><%=urlext%>"><%=p%>
+
+        </a>
+
+        </li>
+        <%}%>
+        <li>
+            <a href="/admin/info/story?page=<%=page*1+1 >totalpage ? totalpage:(page*1+1)%><%=urlext%>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<table class="table table-bordered succ">
+    <tr>
+        <th>ID号</th>
+        <th>用户名称</th>
+        <th>主持人</th>
+        <th>化妆师</th>
+        <th>策划</th>
+        <th>婚宴酒楼</th>
+        <th>摄影师</th>
+        <th>宣言</th>
+        <th>成功时间</th>
+        <th>操作</th>
+    </tr>
+    <%
+    let n = 0;
+    for(let qc of winlist){
+    n++;
+    %>
+    <tr>
+        <td><%=qc.wid%></td>
+        <td><%=qc.username%></td>
+        <td><%=qc.主持人%></td>
+        <td><%=qc.化妆师%></td>
+        <td><%=qc.策划%></td>
+        <td><%=qc.婚宴酒楼%></td>
+        <td><%=qc.摄影师%></td>
+        <td><%=qc.sign%></td>
+        <td><%=qc.wintime.toLocaleString()%></td>
+        <td>
+            <a href="javascript:void(0)" class="delwin" qcid="<%=qc.wid%>">清除</a>
+        </td>
+    </tr>
+    <%}%>
+
+
+
+</table>
+
+<footer height="40px" class="footer">2018 © 股份有限公司-版权所有</footer>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/admin/admin.js"></script>
 </body>
 </html>
