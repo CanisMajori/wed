@@ -22,7 +22,7 @@
                     <td><%=d.tel%></td>
                     <td><%=d.email%></td>
                     <td><%=Math.ceil((new Date() - d.regtimes)/(3600*1000*24))%>日</td>
-                    <td><a id="del" href="###" qcid="<%=d.sid%>">删除</a></td>
+                    <td><a class="del" href="###" qcid="<%=d.sid%>">删除</a></td>
                 </tr>
                 <% } %>
             </table>
@@ -37,7 +37,7 @@
         del();
     };
     function del() {
-        $('#del').click(function () {
+        $('.del').click(function () {
             if(!confirm('是否确认删除？')){
                 return ;
             }
