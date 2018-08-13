@@ -59,7 +59,7 @@ module.exports = function(){
             res.render('html/shtml/s_ope',{
                 header:req.session.header
             });
-        }else{
+        }else if(!req.session.uid&&!req.session.sid){
             res.render('html/index');
         }
     });
@@ -68,9 +68,12 @@ module.exports = function(){
 
     //退出登录
     router.get('/logOut',(req,res) => {
+        // console.log(2);
         delete req.session.uid;
+        delete req.session.sid;
         delete req.session.username;
         delete req.session.header;
+        delete req.Cookie;
         res.redirect('/');
     });
 
@@ -192,6 +195,10 @@ module.exports = function(){
 
     //需求型用户登录成功
     router.get('/info1',(req,res)=>{
+        if(!req.session.uid){
+            res.redirect('/');
+            return ;
+        }
         res.render('html/d_ope',{
             header:req.session.header
         });
@@ -214,6 +221,7 @@ module.exports = function(){
     });
     //存起用户的心愿单
     router.post('/save',(req,res)=>{
+
         // console.log(req);
         let sql=`insert into xinyuandan(uid,sid) value(?,?)`;
         mydb.query(sql,[req.session.uid,req.body.sid],(err,result)=>{
@@ -226,6 +234,10 @@ module.exports = function(){
     });
     //服务型用户登录成功
     router.get('/info2',(req,res)=>{
+        if(!req.session.sid){
+            res.redirect('/');l
+            return ;
+        }
         res.render('html/shtml/s_ope',{
             header:req.session.header
         });

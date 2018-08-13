@@ -10,7 +10,6 @@ module.exports = function () {
             res.redirect('/');
             return;
         }
-
         next();
     });
     //渲染个人中心页面,上传头像
@@ -19,7 +18,7 @@ module.exports = function () {
         res.render('html/user',{
             header:req.session.header
         });
-    })
+    });
 
     //渲染修改密码页面
     router.get('/change_passwd',(req,res) => {
@@ -92,7 +91,7 @@ module.exports = function () {
             }
 
         })
-    })
+    });
 
     //将头像存入数据库
     router.post('/saveheader',(req,res) => {
@@ -102,17 +101,19 @@ module.exports = function () {
         mydb.query(sql,[header,req.session.uid],(err,result) => {
             res.json({r:'ok'});
         })
-    })
+    });
 
     //d型用户删除选择自己选择的s型用户
     router.post('/del',(req,res) =>{
         // console.log(req.body);
+        // console.log(1);
         let sql=`update xinyuandan set status= 1 where sid=? and uid=? limit 1`;
-        mydb.query(sql,[req.body.sid,req.session.uid],(err,result)=>{
+        mydb.query(sql,[req.body.sid,req.body.uid],(err,result)=>{
             if(err){
                 console.log(err);
                 res.json({r:'db_err'})
             }else{
+                //console.log(1);
                 res.json({r:'ok'})
             }
         });

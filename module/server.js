@@ -19,6 +19,7 @@ module.exports = function () {
     //渲染个人中心页面
     // 路由写/server访问不到路径，因为/就直接代表入口文件里的子路由
     router.get('/',(req,res) => {
+
         res.render('html/shtml/server',{
             header:req.session.header
         });
@@ -45,20 +46,20 @@ module.exports = function () {
 
     //渲染修改密码页面
     router.get('/change_passwd',(req,res) => {
+
         res.render('html/shtml/change_passwd',{
                 header:req.session.header
         });
     });
     //s型用户查看选择了自己的用户
     router.get('/u_s',(req,res) => {
+
         let sql=`
                 SELECT *
                 FROM  seccept AS e
                 INNER JOIN user AS x 
                 ON x.uid = e.uid
                 where e.sid=? and e.status=0  and x.status=0;
-
-
             `;
         mydb.query(sql,[req.session.sid],(err,result)=>{
             // console.log(result);
@@ -72,6 +73,7 @@ module.exports = function () {
 
     //修改密码的数据库验证
     router.post('/change_passwd',(req,res) => {
+
         let oldPasswd = req.body.oldPasswd;
         let newPasswd = req.body.newPasswd;
 
@@ -135,7 +137,21 @@ module.exports = function () {
         // });
     });
 
-
+    //d型用户删除选择自己选择的s型用户
+    router.post('/del',(req,res) =>{
+        // console.log(req.body);
+        // console.log(1);
+        let sql=`update seccept set status= 1 where sid=? and uid=? limit 1`;
+        mydb.query(sql,[req.session.sid,req.body.uid],(err,result)=>{
+            if(err){
+                console.log(err);
+                res.json({r:'db_err'})
+            }else{
+                console.log(1);
+                res.json({r:'ok'})
+            }
+        });
+    });
 
     return router;
 };

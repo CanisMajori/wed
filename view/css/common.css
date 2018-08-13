@@ -2,3 +2,19 @@
     margin: 0px;
     padding:0px;
 }
+.de{
+    display: inline-block;
+    width: 65px;
+    height: 25px;
+    color: #000;
+    text-align: center;
+    background-color: lightslategray;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.de:hover{
+    color:black!important;
+    background-color: gray;
+    box-shadow: 1px 1px 15px 1px lightslategray;
+    transition: all 1s;
+}

@@ -21,8 +21,9 @@
                     <td><%=d.email%></td>
                     <td><%=d.regtime.toLocaleString()%></td>
                     <td>
-                        <a id="sdel" href="###" qcid="<%=d.sid%>">删除</a>
-                        <a id="save" href="###" qcid="<%=d.sid%>">保存</a>
+                        <!--id只能有一个 循环会有很多-->
+                        <a class="de"  qcid="<%=d.uid%>">删除</a>
+
                     </td>
                 </tr>
                 <% } %>
@@ -34,35 +35,26 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
-    window.onload=function () {
-        del();
-    };
-    function del() {
-        $('#del').click(function () {
-            if(!confirm('是否确认删除？')){
-                return ;
-            }
+
+
+        $('.de').click(function () {
+            console.log(2);
             //删除
             let $qcid = $(this).attr('qcid');
             let This = this;
+            //console.log(1);
             $.ajax({
-                url:'/user/del',
-                type:'POST',
-                data:{sid:$qcid},
-                dataType:'JSON',
-                success:function(result){
+                url: '/server/del',
+                type: 'POST',
+                data: {uid: $qcid},
+                dataType: 'JSON',
+                success: function (result) {
                     console.log(result);
-                    if(result.r == 'ok'){
+                    if (result.r == 'ok'){
                         $(This).parent().parent().remove();
                     }
                 }
             });
         });
-
-    }
-
-
-
-
 </script>
 </html>

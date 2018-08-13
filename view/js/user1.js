@@ -96,6 +96,6 @@ function reg(){
         window.location.href=('./reg2')
     });
     $('.shouye').click(function () {
-        window.location.href='/';
+        window.location.href='/shouye';
     });
 }

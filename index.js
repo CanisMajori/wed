@@ -37,7 +37,7 @@ server.use(expressSession({
     secret: cookiesigned,
     name: 'sessid',
     resave: true, //每次发起请求的时候，有效时间要不要重新及时
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {maxAge: 1800 * 1000}
 }));
 //接收post过来的所有的数据

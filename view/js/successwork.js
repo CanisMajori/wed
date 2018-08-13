@@ -3,9 +3,20 @@
  */
 window.onload=function () {
     move();
+
+
+
+
+
+
+
 };
 function move() {
-    //todo:这里写一个自执行函数，让成功案例自动轮播
+    //加载首页自动轮播
+    //当点击右边按钮的时候停止轮播
+    var time= setInterval (function() {
+        $('#leftbtn').click();
+    }, 2000);
     let n=0;
     $('#leftbtn').click(function () {
         n=n-288;
@@ -33,9 +44,10 @@ function move() {
         }
 
     });
+
     $('#rightbtn').click(function () {
         n=n+288;
-
+        window.clearInterval(time);
         if(n>0) {
             $('.item').css({
                 left: 0,
