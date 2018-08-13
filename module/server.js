@@ -127,7 +127,7 @@ module.exports = function () {
         mydb.query(sql,[req.body.uname,req.body.uid,req.session.sid,req.session.username],(err,result)=>{
             res.json({r:'ok'});
         });
-        //todo:怎么让接受之后和成功案例表联系起来？？？？
+        //todo:怎么让5种用户都接受之后和成功案例表联系起来？？？？
         // let sql=`insert into win (uid,${sclass}) value(?,?) `;
         // mydb.query(sql,[req.body.uid,req.session.username],(err,result)=>{
         //     if(err) console.log(err);
